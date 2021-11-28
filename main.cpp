@@ -1,37 +1,24 @@
 
 #include <iostream>
-#include <vector>
+#include <deque>
+using namespace std;
+#include <time.h>
 int main() {
-    int MaxVec = 5;
-    std::vector<int> arr(MaxVec);
-    std::vector<int> arr1(MaxVec);
-    for (int i =0; i < MaxVec; i++){
-        std::cin>> arr[i];
+    clock_t start, end;
+    start = clock();
+    deque<int> buffer;
+    for (int i =0; i < 1000; i ++) {
+        for (int j = 1; j < 1000; j++) {
+            buffer.push_front(j);
+        }
+        do {
+            buffer.pop_back();
+        } while (buffer.size());
     }
-    for (int i =0; i < MaxVec; i++){
-        std::cin>> arr1[i];
-    }
-    std::vector<int>::iterator it = arr.begin();
-    std::vector<int>::iterator it1 = arr1.begin();
+    end = clock();
+    cout << start<< ":" << end<< endl;
 
-//    arr.erase(arr.begin()+3);
-//    while(it != arr.end()){
-//        std::cout<< *it << std::endl;
-//        it++;
-//    }
-//    it = arr.begin();
-//    arr.clear();
-//    swap(arr, arr1);
-    while(it != arr.end()){
-        std::cout<< *it << std::endl;
-        it++;
-    }
-
-    while(it1 != arr1.end()){
-        std::cout<< *it1 << std::endl;
-        it1++;
-    }
-    return 0;
 }
+
 
 
