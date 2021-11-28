@@ -3,29 +3,16 @@
 #include <list>
 using namespace std;
 int main() {
-    list<int> count;
-    list<int>::iterator lIter;
-    srand(0);
-    for (int i = 0; i < 10; i++ ){
-        count.push_back (rand() % 9 +1);
-    }
-    for (lIter = count.begin() ; lIter!= count.end(); lIter++){
-        cout <<*lIter << endl;
-    }
-    //перед каждым числом 8 добваить - 1, удалить каждое число 2
-    for (lIter = count.begin(); lIter!= count.end(); lIter++){
-        if (8==*lIter){
-            count.insert(lIter, -1);
-        }
-        else if(2==*lIter){
-            lIter = count.erase(lIter);
-        }
-        //
-    }
-    for (lIter = count.begin(); lIter!= count.end(); lIter++){
-        cout << *lIter << endl;
+    list<int> source = {0,1,2,3};
+    list<int>::iterator source_begin = source.begin()++;
+    list<int> target = {100,200};
+    list<int>::iterator pos = target.end();
+    target.splice(pos, source);
+    for (pos = target.begin(); pos!= target.end(); pos++){
+        cout << *pos << endl;
     }
 }
+
 
 
 
