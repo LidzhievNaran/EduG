@@ -9,6 +9,7 @@ void show(set<int> &count){
     }
     cout << endl;
 }
+//&
 int main() {
     set<int> count;
     int new_number;
