@@ -1,15 +1,16 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
-int main(int arcg, char *argv[]) {
-    fstream f;
-    char cstring[256];
+int main() {
+    ifstream f;
+    string s;
     f.open("whats_up.txt", ios::in);
-    while (!f.eof())
+    while(!f.eof())
     {
-        f.getline(cstring, sizeof(cstring));
-        cout << cstring << endl;
+        getline(f, s);
+        cout << s << endl;
     }
     f.close();
 }
